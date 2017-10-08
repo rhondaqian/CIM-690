@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Bio Card</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="css/main.css" rel="stylesheet" type="text/css">   
+  
+
+</head>
+ 
+    
+<body>
+<div class="container">
+    <header role="banner">
+  <h1>Zhuang Qian</h1>
+  <h2>The Story of Me</h2>
+        <img class="img-fluid rounded" src="images/12.gif" width="240" height="240" alt="img1">
+
+        
+</header>
+    </div> 
+    
+<main role="main">
+  <article role="article" class="container">
+ <aside role="complementary" class="languages" class="container">
+    <h3 style="color:white;">Education</h3>
+     <div id="tabContainer" >
+    <div id="tabs">
+      <ul>
+        <li id="tab1"><a href="#tabPanel1">Undergraduate</a></li>
+        <li id="tab2"><a href="#tabPanel2"></a>Exchange</li>
+        <li id="tab3"><a href="#tabPanel3">Graduate</a></li>
+      </ul>
+    </div>
+    <div id="containers">
+      <div id="tabPanel1" class="col-lg-4 col-xs-12">
+        <h4>Undergraduate</h4>
+        <p><strong>Xiamen University</strong> </p>
+          <p>Fujian, China  Sept. 2013- Jul. 2017  </p>
+        <p><li>Major: History </li>
+            <li>Academic Honors: Second-class Excellent Student Scholarship of Xiamen University (twice)  </li>
+            </p>
+      </div>
+      <div id="tabPanel2" class="col-lg-4 col-xs-12">
+        <h4>Exchange</h4>
+          <p><strong> American Language Center Study Abroad at UCLA Program</strong> </p>
+            <p>              CA, US       Jan. 2016-Mar.2016</p>
+        <p><li>Major: History</li>
+            <li>Took courses in History department and earned 12 credits.</li></p>
+      </div>
+     <div id="tabPanel3" class="col-lg-4 col-xs-12">
+        <h4>Graduate</h4>
+        <p><strong>University of Miami</strong> 
+    <p>FL, US Aug.2017-Jun.2019</p>
+        <p><li>Study in IMFA program</li>
+         <li>To be continued...</li></p>
+      </div>
+    </div>
+  </div>
+    </aside>
+  <article>
+      <img class="mx-auto" src="images/05.gif" alt="img2">
+      <a href="page1.html" title="Undergraduate Study"><h3>Undergraduate Study</h3></a>
+     
+    </article> 
+      
+       <article>
+      <img class="mx-auto" src="images/11.gif" alt="img3">
+<a href="page2.html" title="Student Work"><h3>Student Work</h3></a>
+    </article> 
+      
+       <article>
+      <img class="mx-auto" src="images/08.gif" alt="img4">
+<a href="page3.html" title="Internship"><h3>Internship</h3></a>
+    </article> 
+      
+       <article>
+      <img class="mx-auto" src="images/07.gif" alt="img5">
+      <a href="page4.html" title="Work Collections"><h3>Work Collections</h3></a>
+    </article> 
+      
+    </article>
+    </main>
+    <footer role="contentinfo">
+  <p> <a href="mailto:qianz97@163.com">qianz97@163.com</a> | (+86) 13013606050
+</p>
+</footer>
+
+
+<script type="text/javascript">
+//tabbed panels
+
+// declare globals to hold all the links and all the panel elements
+var tabLinks;
+var tabPanels;
+
+window.onload=function() {
+    // when the page loads, grab the li elements
+    tabLinks = document.getElementById("tabs").getElementsByTagName("li");
+	// Now get all the tab panel container divs
+	tabPanels = document.getElementById("containers").getElementsByTagName("div");
+	
+	// activate the _first_ one
+    displayPanel(tabLinks[0]);
+   
+    // attach event listener to links using onclick and onfocus, fire the displayPanel function, return false to disable the link
+    for (var i = 0; i < tabLinks.length; i++) {
+        tabLinks[i].onclick = function() { 
+			displayPanel(this); 
+			return false;
+		}
+        tabLinks[i].onfocus = function() { 
+			displayPanel(this); 
+			return false;
+		}
+    }
+}
+
+function displayPanel(tabToActivate) {
+    // go through all the <li> elements
+    for (var i = 0; i < tabLinks.length; i++) {
+        if (tabLinks[i] == tabToActivate) {
+			// if it's the one to activate, change its class
+            tabLinks[i].classList.add("active");
+			// and display the corresponding panel
+			tabPanels[i].style.display = "block";
+        } else {
+			// remove the active class on the link
+        	tabLinks[i].classList.remove("active");
+			// hide the panel
+			tabPanels[i].style.display = "none";
+        }
+	}
+}
+
+</script>
+      
+      </body>
+</html>
